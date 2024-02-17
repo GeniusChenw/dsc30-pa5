@@ -120,6 +120,7 @@ public class Sorts {
      * This method performs bucket sort on the input arraylist
      *
      * @param list The arraylist we want to sort
+     * @return sortedList
      */
     public static ArrayList<Integer> bucketSort(ArrayList<Integer> list) {
         ArrayList<ArrayList<Integer>> buckets = new ArrayList<>();
@@ -148,6 +149,7 @@ public class Sorts {
      * This method performs count sort on the input arraylist
      *
      * @param list The arraylist we want to sort
+     * @return output
      */
     public static ArrayList<Integer> countSort(ArrayList<Integer> list) {
         ArrayList<Integer> output = new ArrayList<Integer>();
@@ -196,19 +198,63 @@ public class Sorts {
     ////////////////////////
 
 
+    /**
+     * This method takes in an array of integers and
+     * return true or false based on different situation.
+     *
+     * @param arr an array of integers
+     * @param n   iterations of some sorting algorithm
+     * @return true if this algorithm could have been
+     * insertion sort and false otherwise.
+     */
     public static boolean inspectInsertion(int[] arr, int n) {
-        // TODO
-        return false;
+        for (int i = n; i < arr.length; i++) {
+            int j = i;
+            while (j > 0 && arr[j] < arr[j - 1]) {
+                return false;
+            }
+        }
+        return true;
     }
 
+    /**
+     * This method takes in an array of integers and
+     * return true or false based on different situation.
+     *
+     * @param arr an array of integers
+     * @param n   iterations
+     * @return true if this algorithm could have been
+     * selection sort and false otherwise.
+     */
     public static boolean inspectSelection(int[] arr, int n) {
-        // TODO
-        return false;
+        for (int i = 0; i < n && i < arr.length - 1; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j;
+                }
+            }
+            if (minIndex != i) {
+                return false;
+            }
+        }
+        return true;
     }
 
+    /**
+     * This is a method takes in an array of integer,
+     * n numbers of iterations to judge if it is a Merge Sort.
+     * @param arr an array of integers
+     * @param n n iterations
+     * @return true if this algorithm could
+     * have been merge sort and false otherwise
+     */
     public static boolean inspectMerge(int[] arr, int n) {
-        // TODO
-        return false;
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] > arr[i + 1]) {
+                return false;
+            }
+        }
+        return true;
     }
-
 }
