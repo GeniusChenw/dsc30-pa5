@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.ArrayList;
 
 /**
- * TODO: add class header
+ * Sortings
  */
 public class Sorts {
 
@@ -139,7 +139,6 @@ public class Sorts {
         for (ArrayList<Integer> bucket : buckets) {
             if (bucket.size() > 0)
                 insertionSort(bucket, 0, bucket.size() - 1);
-            //TODO // Adds all elements in bucket to sortedList
             sortedList.addAll(bucket);
         }
         return sortedList;

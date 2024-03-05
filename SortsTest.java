@@ -1,17 +1,23 @@
-import org.junit.Test;
-import static org.junit.Assert.assertArrayEquals;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
 
-public class SortsTest {
+class SortsTest {
+
     ArrayList<Integer> list;
 
-    @org.junit.jupiter.api.Test
+    @BeforeEach
+    public void createLists(){
+        list = new ArrayList<>();
+    }
+
+    @Test
     public void testInsertionSort(){
-        ArrayList<Integer> list = new ArrayList<>();
         list.addAll(Arrays.asList(1, 2, 3, 4, 5));
         Sorts.insertionSort(list, 0, 4);
         assertArrayEquals(new Integer[]{1, 2, 3, 4, 5}, list.toArray());
@@ -55,9 +61,8 @@ public class SortsTest {
 
     @Test
     public void testQuickSort() {
-        ArrayList<Integer> list = new ArrayList<>();
         list.addAll(Arrays.asList(1, 2, 3, 4, 5));
-        Sorts.quickSort (list, 0, 4);
+        Sorts.quickSort(list, 0, 4);
         assertArrayEquals(new Integer[]{1, 2, 3, 4, 5}, list.toArray());
 
         list.clear();
@@ -99,8 +104,6 @@ public class SortsTest {
 
     @Test
     public void testBucketSort(){
-        ArrayList<Integer> list = new ArrayList<>();
-
         list.addAll(Arrays.asList(1, 2, 3, 4, 5));
         list = Sorts.bucketSort(list);
         assertArrayEquals(new Integer[]{1, 2, 3, 4, 5}, list.toArray());
@@ -129,8 +132,6 @@ public class SortsTest {
 
     @Test
     public void testCountSort(){
-        ArrayList<Integer> list = new ArrayList<>();
-
         list.addAll(Arrays.asList(1, 2, 3, 4, 5));
         list = Sorts.countSort(list);
         assertArrayEquals(new Integer[]{1, 2, 3, 4, 5}, list.toArray());

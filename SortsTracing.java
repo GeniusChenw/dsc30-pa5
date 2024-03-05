@@ -62,7 +62,7 @@ public class SortsTracing {
 
         return answer;
     }
-    
+
     public ArrayList<int[]> CountSortRandomList() {
         ArrayList<int[]> answer = new ArrayList<int[]>();
         answer.add(new int[]{1,0,1,1,0,1,0,1,1,1});
@@ -114,8 +114,8 @@ public class SortsTracing {
 
     public ArrayList<int[]> QuickSortRandomList() {
         ArrayList<int[]> answer = new ArrayList<int[]>();
-        answer.add(new int[]{3, 6, 1, 7, 0});
-        answer.add(new int[]{1, 0, 3, 6, 7});
+        answer.add(new int[]{0, 1, 3, 6, 7});
+        answer.add(new int[]{0, 1, 3, 6, 7});
         answer.add(new int[]{0, 1, 3, 6, 7});
 
         return answer;
@@ -124,15 +124,19 @@ public class SortsTracing {
     public ArrayList<int[]> QuickSortSortedList() {
         ArrayList<int[]> answer = new ArrayList<int[]>();
         answer.add(new int[]{0, 1, 3, 6, 7});
+        answer.add(new int[]{0, 1, 3, 6, 7});
+        answer.add(new int[]{0, 1, 3, 6, 7});
+        answer.add(new int[]{0, 1, 3, 6, 7});
+        answer.add(new int[]{0, 1, 3, 6, 7});
+
         return answer;
     }
 
     public ArrayList<int[]> QuickSortReversedList() {
         ArrayList<int[]> answer = new ArrayList<int[]>();
-        answer.add(new int[]{7, 6, 3, 1, 0});
-        answer.add(new int[]{6, 3, 1, 0, 7});
-        answer.add(new int[]{3, 1, 0, 6, 7});
-        answer.add(new int[]{1, 0, 3, 6, 7});
+        answer.add(new int[]{0, 6, 3, 1, 7});
+        answer.add(new int[]{0, 6, 3, 1, 7});
+        answer.add(new int[]{0, 1, 3, 6, 7});
         answer.add(new int[]{0, 1, 3, 6, 7});
 
         return answer;
